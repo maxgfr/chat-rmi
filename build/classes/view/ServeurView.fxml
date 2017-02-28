@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="223.0" prefWidth="534.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ServeurViewController">
+    <center>   
+        <VBox> 
+            <HBox>
+                <Label text="Etat : " textAlignment="CENTER" />
+                <Label fx:id="etat" text="A l'arrêt" textAlignment="CENTER" />
+            </HBox>
+            <HBox>
+                <Label text="Message : " textAlignment="CENTER" />
+                <TextArea fx:id="message" />
+            </HBox>
+        </VBox>
+                
+    </center>
+    
+   <bottom>    
+       <HBox>
+           <Button fx:id="start" contentDisplay="CENTER" mnemonicParsing="false" onAction="#start" prefWidth="400.0" text="Lancer le serveur!" textAlignment="CENTER" />
+           <Button fx:id="stop" contentDisplay="CENTER" mnemonicParsing="false" onAction="#stop" prefWidth="400.0" text="Fermer le serveur!" textAlignment="CENTER" /> 
+       </HBox>
+    </bottom>
+ 
+    
+</BorderPane>

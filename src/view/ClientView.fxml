@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClientViewController">
+    
+    <top>
+
+        <MenuBar fx:id="menuBar" prefHeight="29.0" prefWidth="168.0" BorderPane.alignment="CENTER">
+            <menus>
+
+                <Menu mnemonicParsing="true" text="_File">
+                    <items>
+                        
+                    </items>
+                </Menu>
+
+                <Menu mnemonicParsing="true" text="_Option">
+                    <items>	
+                        <MenuItem onAction="#cut" text="Couper" />
+                        <MenuItem onAction="#copy" text="Copier" />
+                        <MenuItem onAction="#paste" text="Coller la petite" />
+                        <MenuItem onAction="#delete" text="Supprimer" />
+                        <SeparatorMenuItem />
+                        <MenuItem onAction="#selectAll" text="Tout selectionner" />
+                        <SeparatorMenuItem />
+                        <MenuItem fx:id="exit" onAction="#exitApp" text="Quitter" />
+                    </items>
+                </Menu>
+
+                <Menu mnemonicParsing="true" text="_Vue">
+                    <items>
+                        <MenuItem onAction="#fullscreen" text="Plein ecran" />
+                    </items>
+                </Menu>
+
+            </menus>
+        </MenuBar>
+    </top>    
+
+    <center>
+        
+        <fx:define>
+            <Integer fx:id="moins1" fx:value="-1" />
+        </fx:define>
+        
+        <SplitPane dividerPositions="0.20656370656370657">
+           <items>
+                <ListView fx:id="list" prefHeight="200.0" prefWidth="200.0"/>
+
+                <BorderPane>
+                    <top>
+                        <TextField fx:id="titleText" BorderPane.alignment="CENTER" />
+                    </top>
+               
+                    <center>
+                        <TextArea fx:id="contentText" prefHeight="655.0" prefWidth="538.0" wrapText="true" BorderPane.alignment="CENTER" />
+                    </center>
+                    
+                    <bottom>
+                       <TextField fx:id="zoneText" BorderPane.alignment="CENTER" />
+                    </bottom>  
+                </BorderPane>
+                
+            </items>
+        </SplitPane>
+    </center>
+    
+    <bottom>
+    <HBox alignment="CENTER" prefHeight="60.0" prefWidth="720.0" BorderPane.alignment="CENTER">
+      <children>
+         <Button fx:id="createButton" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#onCreateButton" prefWidth="400.0" stylesheets="@../css/NotePad.css" text="Create" textAlignment="CENTER"/>
+         <Button fx:id="deletedButton" alignment="CENTER" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onDeletedButton" prefWidth="400.0" stylesheets="@../css/NotePad.css" text="Delete" textAlignment="CENTER"/>
+      </children>
+    </HBox>
+    </bottom> 
+
+</BorderPane>
+
