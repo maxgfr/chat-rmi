@@ -8,6 +8,7 @@ package launch;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -19,10 +20,10 @@ public class MainClient extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/ClientView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/CreateView.fxml"));
         
         Scene scene = new Scene(root);
-        
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }

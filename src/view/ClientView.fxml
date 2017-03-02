@@ -6,20 +6,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClientViewController">
+<BorderPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClientViewController">
     
     <top>
 
         <MenuBar fx:id="menuBar" prefHeight="29.0" prefWidth="168.0" BorderPane.alignment="CENTER">
             <menus>
 
-                <Menu mnemonicParsing="true" text="_File">
+                <Menu mnemonicParsing="true" text="_Option">
                     <items>
-                        
+                        <MenuItem onAction="#deconnexion" text="Se deconnecter" />
                     </items>
                 </Menu>
 
-                <Menu mnemonicParsing="true" text="_Option">
+                <Menu mnemonicParsing="true" text="_Edition">
                     <items>	
                         <MenuItem onAction="#cut" text="Couper" />
                         <MenuItem onAction="#copy" text="Copier" />
@@ -50,34 +50,33 @@
         
         <SplitPane dividerPositions="0.20656370656370657">
            <items>
-                <ListView fx:id="list" prefHeight="200.0" prefWidth="200.0"/>
+                <ListView fx:id="list" items="${controller.leModele.lesTravaux}" prefHeight="200.0" prefWidth="200.0" />
 
                 <BorderPane>
-                    <top>
-                        <TextField fx:id="titleText" BorderPane.alignment="CENTER" />
-                    </top>
-               
-                    <center>
-                        <TextArea fx:id="contentText" prefHeight="655.0" prefWidth="538.0" wrapText="true" BorderPane.alignment="CENTER" />
-                    </center>
-                    
-                    <bottom>
-                       <TextField fx:id="zoneText" BorderPane.alignment="CENTER" />
-                    </bottom>  
+                       <center>
+                            <SplitPane dividerPositions="0.8" orientation="VERTICAL">
+                                <items>
+                                
+                                   <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="181.0" prefWidth="433.0" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+                                      <content>
+                                         <TextArea disable="${list.selectionModel.selectedIndex == moins1}" fx:id="chat"/>  
+                                      </content>
+                                   </ScrollPane>
+                                   
+                                   <HBox minHeight="-Infinity" VBox.vgrow="NEVER">
+                                      <children>
+                                         <TextArea disable="${list.selectionModel.selectedIndex == moins1}" fx:id="sendMessage" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="460.0" promptText="Composez un message..." scaleShape="false" HBox.hgrow="ALWAYS" />
+                                         <Button disable="${list.selectionModel.selectedIndex == moins1}" fx:id="sendButton" onAction="#onSendButton" alignment="CENTER" maxHeight="1.7976931348623157E308" mnemonicParsing="false" scaleShape="false" text="Envoi" textAlignment="CENTER" HBox.hgrow="NEVER" />
+                                   </children>
+                                   </HBox>
+                                   
+                                </items>
+                            </SplitPane>
+                        </center>
                 </BorderPane>
                 
             </items>
         </SplitPane>
     </center>
-    
-    <bottom>
-    <HBox alignment="CENTER" prefHeight="60.0" prefWidth="720.0" BorderPane.alignment="CENTER">
-      <children>
-         <Button fx:id="createButton" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#onCreateButton" prefWidth="400.0" stylesheets="@../css/NotePad.css" text="Create" textAlignment="CENTER"/>
-         <Button fx:id="deletedButton" alignment="CENTER" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onDeletedButton" prefWidth="400.0" stylesheets="@../css/NotePad.css" text="Delete" textAlignment="CENTER"/>
-      </children>
-    </HBox>
-    </bottom> 
 
 </BorderPane>
-

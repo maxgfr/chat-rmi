@@ -13,12 +13,9 @@ import java.rmi.RemoteException;
  * @author maxime
  */
 public interface ICallback extends Remote {
-    
-	// show a message from user
-	void receiveMessage(String Message) throws RemoteException;
-        
-        String DEFAULT_NAME = "ChatClient";
 
-	void sendUserList(String[] userList) throws RemoteException;
+    // Une méthode permettant d’afficher un message envoyé, écrire l’implémentation de cet interface.
+    void dispMsg(String Message) throws RemoteException;
+
 }
 

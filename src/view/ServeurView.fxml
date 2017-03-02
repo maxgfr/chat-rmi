@@ -6,12 +6,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="223.0" prefWidth="534.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ServeurViewController">
+<BorderPane prefHeight="223.0" prefWidth="534.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.121" fx:controller="controller.ServeurViewController">
     <center>   
         <VBox> 
             <HBox>
-                <Label text="Etat : " textAlignment="CENTER" />
-                <Label fx:id="etat" text="A l'arrêt" textAlignment="CENTER" />
+                <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="534.0" text="Serveur RMI : " textAlignment="CENTER" />
             </HBox>
             <HBox>
                 <Label text="Message : " textAlignment="CENTER" />
