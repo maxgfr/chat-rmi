@@ -69,7 +69,7 @@ public class ServeurViewController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        stop.setDisable(true);
     }    
     
 }

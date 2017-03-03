@@ -22,11 +22,6 @@ public class User {
         public void setName(String value) { name.set(value); }
         public StringProperty nameProperty() { return name; }
         
-    private final StringProperty historique = new SimpleStringProperty();
-        public String getHistorique() { return historique.get();}
-        public void setHistorique(String value) { historique.set(value); }
-        public StringProperty historiqueProperty() { return historique; }
-        
     private final ObjectProperty<IMsn> server = new SimpleObjectProperty<IMsn>();
         public IMsn getMsn() { return server.get();}
         public void setMsn(IMsn value) { server.set(value); }
@@ -37,11 +32,10 @@ public class User {
         public void setCallback(ICallback value) { ref.set(value); }
         public ObjectProperty<ICallback> CallbackProperty() { return ref; }    
 
-    public User(String name, IMsn server, ICallback ref, String hq) {
-            setName(name);
-            setMsn(server);
-            setCallback(ref);
-            setHistorique(hq);
+    public User(String name, IMsn server, ICallback ref) {
+        setName(name);
+        setMsn(server);
+        setCallback(ref);
     }
 
     public void enregistreServeur ()
@@ -53,12 +47,12 @@ public class User {
         }
     }
     
-    public void envoiMessage (String msg, String user)
+    public void envoiMessage (String msg, String name)
     {
         try {
-            if (getMsn().isConnected(user))
+            if (getMsn().isConnected(name))
             {
-                ICallback referenceOther = getMsn().obtainRef(user);
+                ICallback referenceOther = getMsn().obtainRef(name);
                 referenceOther.dispMsg(msg);
             } else {
                 System.out.println("Utilisateur non connecté");
@@ -75,5 +69,25 @@ public class User {
         } catch (RemoteException e) {
             e.getMessage();
         }
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
+
+        User other = (User) obj;
+        if (getName() == null) return  other.getName() == null;
+        return getName().equals(other.getName());
+    }
+
+	
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
+        return result;
     }
 }

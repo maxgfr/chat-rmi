@@ -15,7 +15,7 @@ import java.rmi.RemoteException;
 public interface ICallback extends Remote {
 
     // Une méthode permettant d’afficher un message envoyé, écrire l’implémentation de cet interface.
-    void dispMsg(String Message) throws RemoteException;
+    void dispMsg(String message) throws RemoteException;
 
 }
 

@@ -36,10 +36,8 @@ public class MsnImpl extends UnicastRemoteObject implements IMsn{
 
     @Override
     public boolean isConnected(String name) throws RemoteException {
-        for (Map.Entry<String,ICallback> entry : map.entrySet()) {
-            if (entry.getKey().equals(name)) {
-                return true;
-            }
+        if (map.entrySet().stream().anyMatch((entry) -> (entry.getKey().equals(name)))) {
+            return true;
         }
         return false;   
     }
@@ -56,16 +54,15 @@ public class MsnImpl extends UnicastRemoteObject implements IMsn{
 
     @Override
     public void logOut(String name) throws RemoteException {
-         for (Map.Entry<String,ICallback> entry : map.entrySet()) {
-            if (entry.getKey().equals(name)) {
-                map.remove(entry.getKey());
-            }
-        }
+        map.entrySet().stream().filter((entry) -> (entry.getKey().equals(name))).forEachOrdered((entry) -> {
+            map.remove(entry.getKey());
+        });
     }
 
     @Override
     public Map<String, ICallback> getMap() throws RemoteException {
         return map;
     }
+    
     
 }
