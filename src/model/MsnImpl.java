@@ -8,6 +8,7 @@ package model;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -54,9 +55,16 @@ public class MsnImpl extends UnicastRemoteObject implements IMsn{
 
     @Override
     public void logOut(String name) throws RemoteException {
-        map.entrySet().stream().filter((entry) -> (entry.getKey().equals(name))).forEachOrdered((entry) -> {
-            map.remove(entry.getKey());
-        });
+        Iterator<Map.Entry<String,ICallback>> it;
+        Map.Entry<String,ICallback> entry;
+        it = map.entrySet().iterator();
+        while (it.hasNext())
+        {
+            entry = it.next();
+            if (entry.getKey().equals(name)) {
+                map.remove(entry.getKey());
+            }
+        }
     }
 
     @Override

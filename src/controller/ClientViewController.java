@@ -151,9 +151,11 @@ public class ClientViewController implements Initializable  {
         try {
             Registry rg =LocateRegistry.getRegistry("localhost",6767);
             IMsn mn = (IMsn) rg.lookup("Manager"); 
+            int size = list.getItems().size();
+            list.getItems().remove(0, size);
             for (Map.Entry<String,ICallback> entry : mn.getMap().entrySet()) {
                 User e = new User (entry.getKey(),mn,entry.getValue());
-                if (!list.getItems().contains(e) && !e.getName().equals(utilisateur.getName())){
+                if (!e.getName().equals(utilisateur.getName())){
                     list.getItems().add(e);
                 }
             }
