@@ -11,6 +11,6 @@
    <children>
       <Label layoutX="27.0" layoutY="26.0" text="Taper votre nom d'utilisateur" />
       <TextField fx:id="txt" layoutX="30.0" layoutY="73.0" />
-      <Button fx:id="bouton" layoutX="78.0" layoutY="131.0" mnemonicParsing="false" onAction="#onValidateButton" text="Valider" />
+      <Button fx:id="bouton" defaultButton="true" layoutX="78.0" layoutY="131.0" mnemonicParsing="false" onAction="#onValidateButton" text="Valider" />
    </children>
 </AnchorPane>

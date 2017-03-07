@@ -22,7 +22,7 @@
     
    <bottom>    
        <HBox>
-           <Button fx:id="start" contentDisplay="CENTER" mnemonicParsing="false" onAction="#start" prefWidth="400.0" text="Lancer le serveur!" textAlignment="CENTER" />
+           <Button fx:id="start" defaultButton="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#start" prefWidth="400.0" text="Lancer le serveur!" textAlignment="CENTER" />
            <Button fx:id="stop" contentDisplay="CENTER" mnemonicParsing="false" onAction="#stop" prefWidth="400.0" text="Fermer le serveur!" textAlignment="CENTER" /> 
        </HBox>
     </bottom>

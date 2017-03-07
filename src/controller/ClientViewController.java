@@ -108,7 +108,7 @@ public class ClientViewController implements Initializable  {
             Registry rg =LocateRegistry.getRegistry("localhost",6767);
             mn = (IMsn) rg.lookup("Manager");
 	} catch (NotBoundException | RemoteException e) {
-            showMessage(Alert.AlertType.ERROR, null, "Erreur a l'accès du serveur:" + e);
+            //showMessage(Alert.AlertType.ERROR, null, "Erreur a l'accès du serveur:" + e);
 	}
         
 	try {

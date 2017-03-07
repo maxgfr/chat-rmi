@@ -16,6 +16,7 @@ import javafx.collections.ObservableList;
  * @author maxime
  */
 public class Communaute {
+    
     private final ObservableList<User> lesTravauxObservables = FXCollections.observableArrayList();
     
     private final ListProperty<User> lesTravaux = new SimpleListProperty<>(lesTravauxObservables);

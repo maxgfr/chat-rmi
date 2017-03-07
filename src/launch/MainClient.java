@@ -27,6 +27,14 @@ public class MainClient extends Application {
         stage.setScene(scene);
         stage.show();
     }
+    
+    @Override
+    public void stop() throws Exception 
+    {
+        super.stop();
+        Platform.exit();
+        System.exit(0);
+    }
 
     /**
      * @param args the command line arguments
