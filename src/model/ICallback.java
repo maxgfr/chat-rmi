@@ -9,12 +9,16 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 /**
- *
+ * ICallBack Interface, must be implemented 
  * @author maxime
  */
 public interface ICallback extends Remote {
 
-    // Une méthode permettant d’afficher un message envoyé, écrire l’implémentation de cet interface.
+    /**
+     * Whoever use this method display a message to the one instance this object
+     * @param message the message to display
+     * @throws RemoteException
+     */
     void dispMsg(String message) throws RemoteException;
 
 }

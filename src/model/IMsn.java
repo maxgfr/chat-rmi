@@ -10,24 +10,47 @@ import java.rmi.RemoteException;
 import java.util.Map;
 
 /**
- *
+ * A remote interface for server
  * @author maxime
  */
 public interface IMsn extends Remote {
     
-    //Une méthode permettant à un client de s’enregistrer en envoyant son nom ainsi que la référence de son objet callback.
+    /**
+     * Allow a client to register by sending his name and his ICallBack instance
+     * @param name
+     * @param client
+     * @throws RemoteException
+     */
     void addUser(String name, ICallback client) throws RemoteException;
     
-    //Une méthode permettant à un client de savoir si un autre client est en ligne (déjà enregistrer) grâce à un nom.
+    /**
+     * Allow a client to know if another client is online (registered) thanks to his name.
+     * @param name
+     * @return true if the client is registered
+     * @throws RemoteException
+     */
     boolean isConnected (String name) throws RemoteException;
     
-    //Une méthode permettant d’obtenir la référence d’un objet callback d’un client en ligne grâce à son nom.
+    /**
+     * Get the ICallback Object whose name is given by parameter
+     * @param name
+     * @return ICallback of the client
+     * @throws RemoteException
+     */
     ICallback obtainRef (String name) throws RemoteException;
     
-    //Une méthode permettant à un client de se déconnecter en envoyant son nom.
+    /**
+     * Allow a client to logout from this server
+     * @param name : client's name
+     * @throws RemoteException
+     */
     void logOut (String name) throws RemoteException;
     
-    //Une méthode permettant à un client d'avoir la map retournant tous les utilisateurs
+    /**
+     * Get the Hashmap which contains all the users
+     * @return HashMap
+     * @throws RemoteException
+     */
     Map<String, ICallback> getMap () throws RemoteException;
     
 }

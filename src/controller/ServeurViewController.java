@@ -19,21 +19,42 @@ import javafx.scene.control.TextArea;
 import model.*;
 
 /**
- *
+ * Controller for JavaFX view of Server
  * @author maxime
+ * 
  */
 public class ServeurViewController implements Initializable {
-   
+   /**
+    * start Button
+    */
     @FXML
     private Button start;
+    
+    /**
+     * stop Button
+     */
     @FXML
     private Button stop;
+    
+    /**
+     * TextArea
+     */
     @FXML
     private TextArea message;
     
+    /**
+     * MSN Mannages
+     */
     MsnImpl msn;
+    
+    /*
+     * Registry
+     */
     Registry rg;
     
+    /**
+     * Crate a new MSN Manager and a registry
+     */
     @FXML
     protected void start() {
         start.setDisable(true); //eviter la création d'un nouveau thread
@@ -52,7 +73,9 @@ public class ServeurViewController implements Initializable {
         }
     }
     
-    
+    /**
+     * Remove the registry
+     */
     @FXML
     protected void stop() {
         start.setDisable(false);
@@ -64,8 +87,6 @@ public class ServeurViewController implements Initializable {
             message.appendText(e.getMessage()+"\n\n");
         }
     }
-    
-    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

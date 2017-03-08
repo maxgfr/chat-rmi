@@ -6,21 +6,31 @@
 package model;
 
 /**
- *
+ * callback implementation, allow user to receive message from other users
  * @author maxime
  */
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-
+/**
+ * Implementation of Remote Interface {@link ICallback}
+ * @author benoit
+ *
+ */
 public class CallbackImpl extends UnicastRemoteObject implements ICallback
 {
-
+	/**
+	 * Constructor
+	 * @throws RemoteException
+	 */
     public CallbackImpl() throws RemoteException
     {
             super();
     }
-
+    
+    /**
+     * Print message on CLI
+     */
     @Override
     public void dispMsg(String message)
     {

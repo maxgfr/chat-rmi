@@ -5,6 +5,7 @@
  */
 package launch;
 
+import controller.ClientViewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,11 +14,17 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- *
+ * Launch the client windows
  * @author maxime
+ * @see ClientViewController
  */
 public class MainClient extends Application {
-    
+	
+	/**
+     * Start the JavaFX windows
+     * @param stage
+     * @throws Exception
+     */
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/view/CreateView.fxml"));
@@ -27,7 +34,10 @@ public class MainClient extends Application {
         stage.setScene(scene);
         stage.show();
     }
-    
+    /**
+     * Close the window
+     * @throws Exception
+     */
     @Override
     public void stop() throws Exception 
     {
@@ -37,6 +47,7 @@ public class MainClient extends Application {
     }
 
     /**
+     * Main
      * @param args the command line arguments
      */
     public static void main(String[] args) {
