@@ -5,6 +5,7 @@
  */
 package launch;
 
+import controller.ServeurViewController;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -14,11 +15,13 @@ import javafx.stage.Stage;
 
 
 /**
- *
+ * Launch JavaFX windows for server
  * @author maxime
+ * @see ServeurViewController
+ * 
  */
 public class MainServeur extends Application {
-    
+	
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/view/ServeurView.fxml"));
@@ -39,6 +42,7 @@ public class MainServeur extends Application {
     }
 
     /**
+     * Launch the window
      * @param args the command line arguments
      */
     public static void main(String[] args) {

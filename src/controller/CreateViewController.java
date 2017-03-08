@@ -11,7 +11,7 @@ import javafx.fxml.Initializable;
 
 
 /**
- *
+ * Controller for Login view
  * @author maxime
  */
 public class CreateViewController extends ClientViewController implements Initializable {

@@ -12,18 +12,28 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- *
+ * Communaute
  * @author maxime
  */
 public class Communaute {
     
+	/**
+	 * Observable List of user
+	 */
     private final ObservableList<User> lesTravauxObservables = FXCollections.observableArrayList();
     
+    /**
+     * JavaFx list of observable Users
+     */
     private final ListProperty<User> lesTravaux = new SimpleListProperty<>(lesTravauxObservables);
+        /**
+         * Getter
+         * @return ObservableList User
+         */
         public ObservableList<User> getLesTravaux() {return lesTravaux.get();}
+        /**
+         * Getter
+         * @return ReadOnlyListProperty User
+         */
         public ReadOnlyListProperty<User> lesTravauxProperty() {return lesTravaux;}
-
-    public Communaute(){
-        
-    }
 }
