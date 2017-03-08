@@ -25,7 +25,7 @@
                     <items>	
                         <MenuItem onAction="#cut" text="Couper" />
                         <MenuItem onAction="#copy" text="Copier" />
-                        <MenuItem onAction="#paste" text="Coller la petite" />
+                        <MenuItem onAction="#paste" text="Coller" />
                         <MenuItem onAction="#delete" text="Supprimer" />
                         <SeparatorMenuItem />
                         <MenuItem onAction="#selectAll" text="Tout selectionner" />
