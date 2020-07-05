@@ -1,2 +1,3 @@
-# talKlose
-chat who works thanks to RMI
+# chat-rmi
+
+chat application which works thanks to RMI technology
