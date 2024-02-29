@@ -1,0 +1,44 @@
+repo_name: maxgfr/chat-rmi
+report_id: 6006d061eb7846c98daeda77591bea50
+version: 0.1
+repo_type: Public
+timestamp: '2024-02-29T18:33:47+00:00'
+requested_by: maxgfr
+provider: github
+branch: master
+detected_tools_count: 3
+tools:
+- name: Java
+  description: A concurrent, class-based, object-oriented, language specifically designed
+    to have as few implementation dependencies as possible
+  website_url: https://www.java.com
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/995/K85ZWV2F.png
+  detection_source_url: https://github.com/maxgfr/chat-rmi
+  detection_source: Repo Metadata
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/maxgfr/chat-rmi/blob/master/dist/run1077873248/web-files/dtjava.js
+  detection_source: dist/run1077873248/web-files/dtjava.js
+  last_updated_by: maxgfr
+  last_updated_on: 2017-03-02 20:03:29.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/maxgfr/chat-rmi
+  detection_source: Repo Metadata
